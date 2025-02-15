@@ -1,24 +1,54 @@
-# C++ Project Starter Template
+## General Overview
 
-This is a little quick-start project template for C++ projects which utilise a Core/App project architecture. There are two included projects - one called _Core_, and one called _App_. [Premake](https://github.com/premake/premake-core) is used to generate project files.
+**1. Introduction**
+**"Orbis Imperium"** is conceptualized as a grand strategy space empire simulator that intricately combines deep economic simulation, tactical space combat, and emergent storytelling within a modular gameplay framework. Players will navigate the complexities of managing an interstellar empire in a dynamic galaxy where factions, economies, and militaries interact in real time.
 
-Core builds into a static library and is meant to contain common code intended for use in multiple applications. App builds into an executable and links the Core static library, as well as provides an include path to Core's code.
+**2. Core Vision & Scope**
+A **Living, Breathing Galaxy**: The game simulates an entire galaxy as a dynamic, evolving system, where every star system, planet, ship, and population group is interconnected and reacts to player actions.
 
-The `Scripts/` directory contains build scripts for Windows and Linux, and the `Vendor/` directory contains Premake binaries (currently version `5.0-beta2`).
+**3. Gameplay Mechanics**
+Gameplay revolves around several key modules, including economic management, tactical combat, diplomacy, and more. See the **Systems** section for details.
 
-## Getting Started
-1. Clone this repository or use the "Use this template" button on GitHub to quickly set up your own repository based on this template
-2. `App/` and `Core/` are the two projects - you can edit the names of these folders and their contents to suit
-3. The three included Premake build files are `Build.lua`, `Core/Build-Core.lua` and `App/Build-App.lua` - you can edit these to customise your build configurations, edit the names of your projects and workspace/solution, etc.
-4. Open the `Scripts/` directory and run the appropriate `Setup` script to generate projects files. You can edit the setup scripts to change the type of project that is generated - out of the box they are set to Visual Studio 2022 for Windows and gmake2 for Linux.
+**4. Technical Architecture & System Design**
+The game employs a modular architecture that allows different systems (e.g., economic, military, diplomatic) to operate independently while interacting through a shared data layer. This design enhances flexibility and scalability, enabling future updates and expansions without disrupting existing functionalities.
 
-Note that no macOS setup script is currently provided; you can duplicate the Linux script and adjust accordingly.
+The upper layers of the Architecture are built with OOP principles in mind, while performance-heavy sections, such as the economy simulation system, celestial simulation, geopolitical cost-balance analysis, physics, etc. are built with DOD principles in mind.
 
-## Included
-- Some example code (in `App/Source` and `Core/Source`) to provide a starting point and test
-- Simple `.gitignore` to ignore project files and binaries
-- Premake binaries for Win/Mac/Linux (`v5.0-beta2`)
+**5. User Experience & Interface Design**
+The user interface is focused on clarity and simplicity (Concise text and recognizable and easily differentiated icons), consistency (uniform fonts, colors, styles), feedback (less than 33ms between updates - in 60 fps scenarios, zero frames between updates). Visual hierarchy (Most critical information under one button click), Data Visualization (charts, graphs, dashboards), Minimize Cognitive Load (Essential data shown, with drill-down options)
 
-## License
-- UNLICENSE for this repository (see `UNLICENSE.txt` for more details)
-- Premake is licensed under BSD 3-Clause (see included LICENSE.txt file for more details)
+**6. Audio Design & Music System**
+The audio design philosophy focuses on creating dynamic soundscapes and adaptive music that respond to various gameplay states.
+
+**7. Social Features & Community Integration**
+The game may support modding in the future to foster community engagement and content creation.
+
+---
+
+## Simulation Systems
+
+**Orbis Imperium** includes the following core simulation systems, each contributing to a dynamic and interdependent game world:
+
+1. **Economy**: Simulates trade, resource production, supply chains, and financial markets, including corporate activity and the flow of goods.
+    
+2. **Diplomacy**: Manages faction interactions, alliances, treaties, and political negotiations, with a focus on both external diplomacy and internal political dynamics.
+    
+3. **Military**: Handles fleet movements, logistics, combat, and strategic deployments, emphasizing tactical decision-making in space and on the ground.
+    
+4. **Geopolitics**: Oversees the balance of power between factions, territorial borders, and global political dynamics, ensuring shifting alliances and rivalries.
+    
+5. **Espionage**: Facilitates covert operations, intelligence gathering, sabotage, and counterintelligence, influencing faction behavior and strategic planning.
+    
+6. **Environmental**: Models planetary ecosystems, space conditions, and resource availability, impacting colonization, settlement, and resource extraction.
+    
+7. **Demography**: Tracks population growth, migration, and societal trends, influencing workforce availability, public sentiment, and economic stability.
+    
+8. **Sociology**: Simulates cultural development, public opinion, and social movements, affecting internal governance and inter-faction relations.
+    
+9. **Research**: Drives technological advancements, unlocking new capabilities for the player’s empire, including military tech, economic improvements, and social development.
+    
+10. **Ship Control (Tactical Combat)**: Allows players to control individual ships in real-time tactical combat, focusing on ship maneuvering, formations, and combat strategies.
+    
+
+---
+
